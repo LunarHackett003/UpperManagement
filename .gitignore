@@ -72,3 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 UpperManagement/Logs/shadercompiler-UnityShaderCompiler.exe0.log
 *.log
+*.log
