@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] Transform cameraFollow;
+    [SerializeField] Character cameraFollow;
     [SerializeField] Vector3 offset;
     [SerializeField] float lerpSpeed;
+    [SerializeField] float lookaheadDivider;
     private void FixedUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, cameraFollow.position + offset, Time.fixedDeltaTime * lerpSpeed);
+        transform.position = Vector3.Lerp(transform.position, cameraFollow.transform.position + offset + ((Vector3)cameraFollow.rb.velocity / lookaheadDivider), Time.fixedDeltaTime * lerpSpeed);
     }
 }

@@ -15,7 +15,7 @@ public class Character : MonoBehaviour
     //Physics Variables
     [SerializeField] float groundCheckDistance;
     [SerializeField] float groundCheckRadius; //Since we're circle-casting, we need a variable radius
-    [SerializeField] Rigidbody2D rb;
+    public Rigidbody2D rb { get ; private set; }
     [SerializeField] float jumpForce, airMoveForce;
     [SerializeField] LayerMask groundLayerMask;
     //Movement Variables
@@ -32,7 +32,7 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -77,6 +77,6 @@ public class Character : MonoBehaviour
 
     private void Jump()
     {
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.up * jumpForce);
     }
 }
