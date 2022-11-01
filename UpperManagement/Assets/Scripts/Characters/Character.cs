@@ -25,7 +25,8 @@ public class Character : MonoBehaviour
     [SerializeField] float moveDamped;
 
     [SerializeField] bool grounded;
-
+    [SerializeField] float jumpTime;
+    float currentJumpTime;
 
     public InputVariables ivars;
 
@@ -53,11 +54,14 @@ public class Character : MonoBehaviour
         {
             moveDamped = Mathf.SmoothDamp(moveDamped, ivars.moveInput, ref moveDampVel, moveDampTime);
             rb.velocity = new Vector2(moveDamped * moveSpeed, rb.velocity.y);
-            
 
-            if(ivars.verticalInput >= UnityEngine.InputSystem.InputSystem.settings.defaultButtonPressPoint)
+
+            if (ivars.verticalInput >= UnityEngine.InputSystem.InputSystem.settings.defaultButtonPressPoint)
             {
-                Jump();
+                if (currentJumpTime < jumpTime)
+                {
+                    Jump();
+                }
             }
 
         }
@@ -72,11 +76,13 @@ public class Character : MonoBehaviour
         Debug.DrawRay(transform.position, Vector2.down * groundCheckDistance);
         bool hit = Physics2D.CircleCast(transform.position, groundCheckRadius, Vector2.down, groundCheckDistance, groundLayerMask).collider;
         Debug.Log($"ground {hit}");
+        currentJumpTime = 0;
         return hit;
     }
 
     private void Jump()
     {
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        currentJumpTime += Time.fixedDeltaTime;
     }
 }
