@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 24c04cf1421282f4f82fd022fe77c770
+guid: eeeb31debd8eed24497d9f664b4e9e52
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -152,33 +152,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Janitor Sprite_0
+      name: Enemy (1)_0
       rect:
         serializedVersion: 2
         x: 8
         y: 70
-        width: 17
-        height: 22
-      alignment: 8
-      pivot: {x: 1, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 784179cd49bb05d4aafea71a854c3df5
-      internalID: 543234637
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Janitor Sprite_1
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 70
-        width: 16
+        width: 13
         height: 21
       alignment: 8
       pivot: {x: 1, y: 0}
@@ -187,19 +166,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19047e8c387ec16428c67001377d7bef
-      internalID: -550142457
+      spriteID: b0e7949d69cb54a45b05b414d551d322
+      internalID: 717186413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Janitor Sprite_2
+      name: Enemy (1)_1
       rect:
         serializedVersion: 2
-        x: 73
+        x: 41
         y: 70
-        width: 16
+        width: 12
         height: 20
       alignment: 8
       pivot: {x: 1, y: 0}
@@ -208,20 +187,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7bdace18c590ec448af69895bee4ba9
-      internalID: -780918134
+      spriteID: a3608061258783a448d7f7b9cbb326d0
+      internalID: 657000424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Janitor Sprite_3
+      name: Enemy (1)_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 70
+        width: 12
+        height: 19
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4807992e81cfb428bd14ac9d4424e9
+      internalID: 1707134177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy (1)_3
       rect:
         serializedVersion: 2
         x: 9
         y: 38
-        width: 16
-        height: 21
+        width: 12
+        height: 20
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a1a60bce38828e4383c0c73ea87c254
-      internalID: -1798699584
+      spriteID: eabbdaa0bb33c084db38f18114817d5e
+      internalID: 2084893285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Janitor Sprite_4
+      name: Enemy (1)_4
       rect:
         serializedVersion: 2
         x: 39
         y: 38
-        width: 18
-        height: 22
+        width: 14
+        height: 21
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7eb5c62dad6e2ce4ebd78eeb1becfc6d
-      internalID: 2027440134
+      spriteID: e8ed6f37357ddeb46b27b7d3e2d11191
+      internalID: -686978171
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Janitor Sprite_5
+      name: Enemy (1)_5
       rect:
         serializedVersion: 2
         x: 71
         y: 38
-        width: 18
-        height: 21
+        width: 14
+        height: 20
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e4ea3f3c39ff4840ad45285f6b83fe3
-      internalID: -213737698
+      spriteID: 37e7ede71332b964ca95c4669eb4577b
+      internalID: 581858931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Janitor Sprite_6
+      name: Enemy (1)_6
       rect:
         serializedVersion: 2
         x: 7
         y: 6
-        width: 18
-        height: 21
+        width: 14
+        height: 19
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbc7aa45c3f485747b1b0b967c9eb9df
-      internalID: -1241244509
+      spriteID: 0101d5fe66d37634499a699acca03c3b
+      internalID: 256878
       vertices: []
       indices: 
       edges: []
@@ -309,13 +309,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Janitor Sprite_0: 543234637
-      Janitor Sprite_1: -550142457
-      Janitor Sprite_6: -1241244509
-      Janitor Sprite_4: 2027440134
-      Janitor Sprite_2: -780918134
-      Janitor Sprite_5: -213737698
-      Janitor Sprite_3: -1798699584
+      Enemy (1)_0: 717186413
+      Enemy (1)_3: 2084893285
+      Enemy (1)_5: 581858931
+      Enemy (1)_4: -686978171
+      Enemy (1)_1: 657000424
+      Enemy (1)_2: 1707134177
+      Enemy (1)_6: 256878
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
