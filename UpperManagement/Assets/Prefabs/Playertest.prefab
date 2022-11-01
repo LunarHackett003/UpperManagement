@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257163775810272402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.162, y: 1.005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -223,7 +223,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257163776009461852}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -241,12 +241,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1257163776009461852}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2a58ad4aa6368e84ab2d6af908ad8ac3, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.6, y: 0.7}
-  m_Size: {x: 1, y: 1.510386}
+  m_Offset: {x: -1.2, y: 1.4}
+  m_Size: {x: 2, y: 3}
   m_Direction: 0
 --- !u!50 &1257163776009461853
 Rigidbody2D:
@@ -263,7 +263,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0.3
   m_AngularDrag: 0.05
-  m_GravityScale: 2.4
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -281,8 +281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de377a65ed8c67f4baff94a815b36d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheckDistance: 1.5
-  groundCheckRadius: 0.25
+  groundCheckDistance: 0.85
+  groundCheckRadius: 0.4
   jumpForce: 2
   airMoveForce: 10
   groundLayerMask:
@@ -292,7 +292,9 @@ MonoBehaviour:
   moveDampTime: 0.2
   moveDamped: 0
   grounded: 1
-  jumpTime: 0
+  jumpTime: 0.12
+  currentJumpTime: 0
+  groundCheckStart: {fileID: 1257163775810272403}
   ivars:
     moveInput: 0
     verticalInput: 0

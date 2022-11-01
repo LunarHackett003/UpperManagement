@@ -34,11 +34,11 @@ namespace Eclipse.Dungeon
             }
         }
 
-        public Vector2Int size;
+        public Vector2Int gridSize;
         public int startPosition = 0;
         public RoomScriptableObject[] roomList;
         public int maxDungeonIterations;
-        public Vector2Int offset;
+        public Vector2Int roomSize;
         public List<Cell> board;
         List<GameObject> boardRooms;
 
@@ -62,12 +62,12 @@ namespace Eclipse.Dungeon
         /// </summary>
         public void GenerateDungeon()
         {
-            for (int i = 0; i < size.x; i++)
+            for (int i = 0; i < gridSize.x; i++)
             {
-                for (int j = 0; j < size.y; j++)
+                for (int j = 0; j < gridSize.y; j++)
                 {
 
-                    Cell currentCell = board[ (i + j * size.x)];
+                    Cell currentCell = board[ (i + j * gridSize.x)];
                     if (currentCell.visited)
                     {
                         int randomRoom = -1;
@@ -105,7 +105,7 @@ namespace Eclipse.Dungeon
 
 
 
-                        var newRoom = Instantiate(roomList[randomRoom].RoomAndRule.room, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity,transform).GetComponent<RoomBehaviour>();
+                        var newRoom = Instantiate(roomList[randomRoom].RoomAndRule.room, new Vector3(i * roomSize.x, -j * roomSize.y, 0), Quaternion.identity,transform).GetComponent<RoomBehaviour>();
 
 
                         newRoom.UpdateRoom(currentCell.status);
@@ -127,9 +127,9 @@ namespace Eclipse.Dungeon
 
             board = new List<Cell>();
 
-            for (int i = 0; i < size.x; i++)
+            for (int i = 0; i < gridSize.x; i++)
             {
-                for (int j = 0; j < size.y; j++)
+                for (int j = 0; j < gridSize.y; j++)
                 {
                     board.Add(new Cell()); //Creates a "board" of cells, containing the rooms of the dungeon.
                 }
@@ -220,25 +220,25 @@ namespace Eclipse.Dungeon
             List<int> neighbors = new List<int>();
 
             //check up neighbor
-            if (cell - size.x >= 0 && !board[(cell - size.x)].visited)
+            if (cell - gridSize.x >= 0 && !board[(cell - gridSize.x)].visited)
             {
-                neighbors.Add((cell - size.x));
+                neighbors.Add((cell - gridSize.x));
             }
 
             //check down neighbor
-            if (cell + size.x < board.Count && !board[(cell + size.x)].visited)
+            if (cell + gridSize.x < board.Count && !board[(cell + gridSize.x)].visited)
             {
-                neighbors.Add((cell + size.x));
+                neighbors.Add((cell + gridSize.x));
             }
 
             //check right neighbor
-            if ((cell + 1) % size.x != 0 && !board[(cell + 1)].visited)
+            if ((cell + 1) % gridSize.x != 0 && !board[(cell + 1)].visited)
             {
                 neighbors.Add((cell + 1));
             }
 
             //check left neighbor
-            if (cell % size.x != 0 && !board[(cell - 1)].visited)
+            if (cell % gridSize.x != 0 && !board[(cell - 1)].visited)
             {
                 neighbors.Add((cell - 1));
             }
