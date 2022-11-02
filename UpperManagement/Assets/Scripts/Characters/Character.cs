@@ -31,6 +31,7 @@ public class Character : MonoBehaviour
     [SerializeField] Transform groundCheckStart;
 
     public InputVariables ivars;
+    [SerializeField] int maxHealth;
 
     // Start is called before the first frame update
     void Start()

@@ -398,9 +398,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de377a65ed8c67f4baff94a815b36d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheckDistance: 0.61
+  groundCheckDistance: 0.54
   groundCheckRadius: 0.35
-  jumpForce: 2
+  jumpForce: 1.5
   airMoveForce: 10
   groundLayerMask:
     serializedVersion: 2
@@ -418,6 +418,7 @@ MonoBehaviour:
     lightInput: 0
     heavyInput: 0
     rangedInput: 0
+  maxHealth: 0
 --- !u!212 &2659110051695233375
 SpriteRenderer:
   m_ObjectHideFlags: 0
