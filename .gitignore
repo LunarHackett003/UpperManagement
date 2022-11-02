@@ -73,3 +73,5 @@ crashlytics-build.properties
 UpperManagement/Logs/shadercompiler-UnityShaderCompiler.exe0.log
 *.log
 *.log
+UpperManagement/Assets/Sprites/Thumbs.db
+UpperManagement/Assets/Sprites/Thumbs.db.meta
