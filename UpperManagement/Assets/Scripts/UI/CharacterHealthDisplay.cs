@@ -12,5 +12,6 @@ public class CharacterHealthDisplay : MonoBehaviour
     private void Start()
     {
         
+
     }
 }
