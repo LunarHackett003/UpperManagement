@@ -780,6 +780,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1227677855, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641219752, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
+      propertyPath: heavyAttackBounds.x
+      value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641219752, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
+      propertyPath: heavyAttackBounds.y
+      value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641219752, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
+      propertyPath: heavyAttackPosition.x
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641219752, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
+      propertyPath: heavyAttackPosition.y
+      value: 0.53
+      objectReference: {fileID: 0}
     - target: {fileID: 1257163776009461848, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -824,17 +844,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1257163776009461849, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
-      propertyPath: jumpTime
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1257163776009461849, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
-      propertyPath: moveDampTime
-      value: 0.05
-      objectReference: {fileID: 0}
     - target: {fileID: 1257163776009461852, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
       propertyPath: m_Name
       value: Playertest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110378508464172173, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216473435653176338, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.011
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216473435653176338, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.555
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}

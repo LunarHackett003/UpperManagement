@@ -45,12 +45,17 @@ public class AttackEvents : MonoBehaviour
         List<Rigidbody2D> rb2ds = new List<Rigidbody2D>();
         while (currentAttackTime < attackTime)
         {
-            Physics2D.OverlapBoxAll(position + (Vector2)transform.position, bounds, 0);
-            foreach (var item in rb2ds)
+            
+            foreach (var item in Physics2D.OverlapBoxAll(position + (Vector2)transform.position, bounds, 0))
             {
-                if (!rb2ds.Contains(item))
+                if (item.attachedRigidbody)
                 {
+                    if (!rb2ds.Contains(item.attachedRigidbody))
+                    {
 
+                    }
+
+                    rb2ds.Add(item.attachedRigidbody);
                 }
             }
         }

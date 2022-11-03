@@ -64,18 +64,18 @@ public class Character : MonoBehaviour
 
     void MoveCharacter()
     {
-        
+        moveDamped = Mathf.SmoothDamp(moveDamped, ivars.moveInput, ref moveDampVel, moveDampTime);
         grounded = IsGrounded();
         if (grounded)
         {
             currentJumpTime = 0;
 
-            moveDamped = Mathf.SmoothDamp(moveDamped, ivars.moveInput, ref moveDampVel, moveDampTime);
+            
             rb.velocity = new Vector2(moveDamped * moveSpeed, rb.velocity.y);
         }
         else
         {
-            rb.AddForce(new Vector2(ivars.moveInput * airMoveForce, ivars.verticalInput * airMoveForce));
+            rb.velocity = new Vector2(airMoveForce * moveDamped, rb.velocity.y);
         }
 
         if (ivars.verticalInput >= UnityEngine.InputSystem.InputSystem.settings.defaultButtonPressPoint)
