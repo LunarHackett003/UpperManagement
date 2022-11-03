@@ -325,9 +325,10 @@ GameObject:
   - component: {fileID: 1257163776009461849}
   - component: {fileID: 2659110051695233375}
   - component: {fileID: 7197863026551525456}
+  - component: {fileID: 1641219752}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -382,7 +383,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 3
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -398,9 +399,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de377a65ed8c67f4baff94a815b36d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheckDistance: 0.54
-  groundCheckRadius: 0.35
-  jumpVelocity: 10
+  groundCheckDistance: 0.56
+  groundCheckRadius: 0.34
+  jumpVelocity: 9
   airMoveForce: 10
   groundLayerMask:
     serializedVersion: 2
@@ -409,7 +410,7 @@ MonoBehaviour:
   moveDampTime: 0.2
   moveDamped: 0
   grounded: 1
-  jumpTime: 0.3
+  jumpTime: 0.15
   currentJumpTime: -0.09
   groundCheckStart: {fileID: 1257163775810272403}
   ivars:
@@ -491,3 +492,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1641219752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257163776009461852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d7a9497e1f00dd4183ffbea0a8f0a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightAttackBounds: {x: 1, y: 0.4}
+  lightAttackPosition: {x: 0.42, y: 0.5}
+  heavyAttackBounds: {x: 0, y: 0}
+  heavyAttackPosition: {x: 0, y: 0}
+  lightAttackDamage: 0
+  heavyAttackDamage: 0
