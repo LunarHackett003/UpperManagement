@@ -400,7 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheckDistance: 0.54
   groundCheckRadius: 0.35
-  jumpForce: 1.5
+  jumpVelocity: 10
   airMoveForce: 10
   groundLayerMask:
     serializedVersion: 2
@@ -409,8 +409,8 @@ MonoBehaviour:
   moveDampTime: 0.2
   moveDamped: 0
   grounded: 1
-  jumpTime: 0.12
-  currentJumpTime: 0
+  jumpTime: 0.3
+  currentJumpTime: -0.09
   groundCheckStart: {fileID: 1257163775810272403}
   ivars:
     moveInput: 0
