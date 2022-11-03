@@ -39,9 +39,12 @@ public class Character : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public int GetHealth()
+    public int GetHealth(bool current)
     {
-        return currentHealth;
+        if (current)
+            return maxHealth;
+        else
+            return currentHealth;
     }
     // Update is called once per frame
     void Update()
@@ -61,18 +64,18 @@ public class Character : MonoBehaviour
 
     void MoveCharacter()
     {
-        
+        moveDamped = Mathf.SmoothDamp(moveDamped, ivars.moveInput, ref moveDampVel, moveDampTime);
         grounded = IsGrounded();
         if (grounded)
         {
             currentJumpTime = 0;
 
-            moveDamped = Mathf.SmoothDamp(moveDamped, ivars.moveInput, ref moveDampVel, moveDampTime);
+            
             rb.velocity = new Vector2(moveDamped * moveSpeed, rb.velocity.y);
         }
         else
         {
-            rb.AddForce(new Vector2(ivars.moveInput * airMoveForce, ivars.verticalInput * airMoveForce));
+            rb.velocity = new Vector2(airMoveForce * moveDamped, rb.velocity.y);
         }
 
         if (ivars.verticalInput >= UnityEngine.InputSystem.InputSystem.settings.defaultButtonPressPoint)
