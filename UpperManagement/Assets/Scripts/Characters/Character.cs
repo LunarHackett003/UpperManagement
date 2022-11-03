@@ -39,9 +39,12 @@ public class Character : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public int GetHealth()
+    public int GetHealth(bool current)
     {
-        return currentHealth;
+        if (current)
+            return maxHealth;
+        else
+            return currentHealth;
     }
     // Update is called once per frame
     void Update()
