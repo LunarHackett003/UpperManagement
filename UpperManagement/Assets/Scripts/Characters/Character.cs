@@ -80,7 +80,7 @@ public class Character : MonoBehaviour
             if (currentJumpTime < jumpTime)
             {
                 Jump();
-                currentJumpTime = currentJumpTime + Time.fixedDeltaTime;
+                
             }
         }
         else
@@ -105,7 +105,7 @@ public class Character : MonoBehaviour
     private void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
-        
+        currentJumpTime += Time.fixedDeltaTime;
     }
     private void OnDrawGizmos()
     {
