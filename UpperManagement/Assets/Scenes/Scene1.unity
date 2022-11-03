@@ -780,22 +780,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1641219752, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
-      propertyPath: heavyAttackDamage
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1641219752, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
-      propertyPath: lightAttackDamage
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1641219752, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
-      propertyPath: lightAttackBounds.y
-      value: 0.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 1641219752, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
-      propertyPath: lightAttackPosition.y
-      value: 0.55
-      objectReference: {fileID: 0}
     - target: {fileID: 1257163776009461848, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -839,6 +823,14 @@ PrefabInstance:
     - target: {fileID: 1257163776009461848, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1257163776009461849, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
+      propertyPath: jumpTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1257163776009461849, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
+      propertyPath: moveDampTime
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1257163776009461852, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
       propertyPath: m_Name
