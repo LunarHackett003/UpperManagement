@@ -7,27 +7,27 @@ public class CharacterHealthDisplay : MonoBehaviour
 {
 
     [SerializeField] Slider healthBar;
-    [SerializeField] Character player;
+    protected DamageableEntity targ;
 
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
+        targ = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
 
 
-        if (healthBar && player)
+        if (healthBar && targ)
         {
-            healthBar.maxValue = player.GetHealth(false);
-            healthBar.value = player.GetHealth(true);
+            healthBar.maxValue = targ.GetHealth(false);
+            healthBar.value = targ.GetHealth(true);
         }
         else { Debug.LogWarning("No player or healthbar found!"); }
     }
 
     private void FixedUpdate()
     {
-        if (healthBar && player)
+        if (healthBar && targ)
         {
-            healthBar.value = player.GetHealth(true);
+            healthBar.value = targ.GetHealth(true);
         }
     }
 

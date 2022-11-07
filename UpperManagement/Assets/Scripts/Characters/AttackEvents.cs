@@ -14,7 +14,7 @@ public class AttackEvents : MonoBehaviour
         public Vector3 attackBounds, attackPosition;
         public int attackDamage;
         public float attackTime;
-
+        public float knockbackMult;
         public Color debugColour;
     }
 
@@ -34,7 +34,7 @@ public class AttackEvents : MonoBehaviour
         foreach (var item in attackList)
         {
             Gizmos.color = item.debugColour;
-            Gizmos.DrawWireCube(transform.rotation * (transform.position + item.attackPosition), item.attackBounds);
+            Gizmos.DrawWireCube(transform.position + (transform.rotation * item.attackPosition), item.attackBounds);
         }
     }
 
@@ -57,18 +57,26 @@ public class AttackEvents : MonoBehaviour
         while (currentAttackTime < thisAtk.attackTime)
         {
 
-            foreach (var item in Physics2D.OverlapBoxAll(transform.rotation * (thisAtk.attackPosition + transform.position), thisAtk.attackBounds, 0, attackLayerMask))
+            foreach (var item in Physics2D.OverlapBoxAll(thisAtk.attackPosition + (transform.rotation * transform.position), thisAtk.attackBounds, 0, attackLayerMask))
             {
                 if (item.attachedRigidbody && item.attachedRigidbody != excludedRB)
                 {
                     if (!rb2ds.Contains(item.attachedRigidbody))
                     {
-                        item.attachedRigidbody.AddForce((transform.position - item.transform.position).normalized * thisAtk.attackDamage );
+                        item.attachedRigidbody.AddForce(( (item.transform.position - transform.position).normalized + (Vector3.up)) * thisAtk.attackDamage * thisAtk.knockbackMult );
+                        yield return null;
                     }
 
-                    rb2ds.Add(item.attachedRigidbody);
+                     rb2ds.Add(item.attachedRigidbody);
+                    yield return null;
                 }
+                else
+                {
+                    //Do nothing and please stop fucking breaking hhhh
+                }
+                yield return null;
             }
+            yield return null;
         }
 
         yield return null;
