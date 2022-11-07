@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class EnemyDetection : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameObject target;
     void Start()
     {
         
@@ -14,5 +15,19 @@ public class EnemyDetection : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            target = collision.gameObject;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            target = null; 
+        }
     }
 }
