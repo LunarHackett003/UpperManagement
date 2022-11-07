@@ -37,6 +37,7 @@ public class Character : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
     }
 
     public int GetHealth(bool current)
@@ -54,12 +55,15 @@ public class Character : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MoveCharacter();
+        if (currentHealth > 0)
+        {
+            MoveCharacter();
 
 
 
 
-        grounded = false;
+            grounded = false;
+        }
     }
 
     void MoveCharacter()
@@ -95,6 +99,10 @@ public class Character : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Performs a ground check. Returns true if the circle cast hits the ground, returns false if it hits anything not in the ground LayerMask.
+    /// </summary>
+    /// <returns></returns>
    bool IsGrounded()
    {
        bool hit = false;
@@ -114,6 +122,15 @@ public class Character : MonoBehaviour
     {
         Gizmos.DrawWireSphere(groundCheckStart.position, groundCheckRadius);
         Gizmos.DrawWireSphere(groundCheckStart.position + (Vector3.down * groundCheckDistance), groundCheckRadius);
+    }
+
+    /// <summary>
+    /// Applies damage when a positive number is supplied, or heals when a negative number is supplied.
+    /// </summary>
+    /// <param name="healthChange"></param>
+    public void ChangeHealth(int healthChange)
+    {
+        currentHealth -= healthChange;
     }
 
 }
