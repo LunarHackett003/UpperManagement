@@ -99,7 +99,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1227677856
 Transform:
   m_ObjectHideFlags: 0
@@ -127,6 +127,8 @@ GameObject:
   - component: {fileID: 1257163775810272403}
   - component: {fileID: 1257163775810272396}
   - component: {fileID: 1257163775810272397}
+  - component: {fileID: 653605155}
+  - component: {fileID: 1148406170}
   m_Layer: 7
   m_Name: Input
   m_TagString: Untagged
@@ -142,7 +144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257163775810272402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.616, y: 0.665, z: 0}
+  m_LocalPosition: {x: -0.038, y: 0.665, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -311,6 +313,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfc7381420baed4983ab71607268302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &653605155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257163775810272402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d73ffc8209d9e4496c53575cf07233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 1257163776009461849}
+--- !u!114 &1148406170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257163775810272402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d73ffc8209d9e4496c53575cf07233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 1257163776009461849}
 --- !u!1 &1257163776009461852
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +392,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.61822975, y: 0.659925}
+  m_Offset: {x: 0, y: 0.659925}
   m_Size: {x: 0.8364594, y: 1.5198498}
   m_Direction: 0
 --- !u!50 &1257163776009461853
@@ -384,7 +412,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 3
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -400,6 +428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de377a65ed8c67f4baff94a815b36d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 20
+  currentHealth: 0
   groundCheckDistance: 0.56
   groundCheckRadius: 0.34
   jumpVelocity: 9
@@ -414,13 +444,13 @@ MonoBehaviour:
   jumpTime: 0.2
   currentJumpTime: -0.09
   groundCheckStart: {fileID: 1257163775810272403}
+  dead: 0
   ivars:
     moveInput: 0
     verticalInput: 0
     lightInput: 0
     heavyInput: 0
     rangedInput: 0
-  maxHealth: 0
 --- !u!212 &2659110051695233375
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -484,7 +514,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5d8197457e11af843908e25ba250eea9, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -505,14 +535,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7a9497e1f00dd4183ffbea0a8f0a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightAttackBounds: {x: 1, y: 0.65}
-  lightAttackPosition: {x: 0.42, y: 0.55}
-  heavyAttackBounds: {x: 0, y: 0}
-  heavyAttackPosition: {x: 0, y: 0}
-  lightAttackDamage: 2
-  heavyAttackDamage: 5
-  lightAttackTime: 0
-  heavyAttackTime: 0
+  attackLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  attackList:
+  - attackName: LightAttack
+    attackBounds: {x: 1.05, y: 0.69, z: 0.45}
+    attackPosition: {x: 0.99, y: 0.51, z: 0}
+    attackDamage: 2
+    attackTime: 0.05
+    knockbackMult: 10
+    debugColour: {r: 0.49019608, g: 1, b: 0.92941177, a: 1}
+  - attackName: HeavyAttack
+    attackBounds: {x: 1.66, y: 1.54, z: 0.45}
+    attackPosition: {x: 1.29, y: 0.62, z: 0}
+    attackDamage: 5
+    attackTime: 0.2
+    knockbackMult: 10
+    debugColour: {r: 0.07075471, g: 0.69529873, b: 1, a: 1}
+  excludedRB: {fileID: 1257163776009461853}
 --- !u!1 &7110378508464172173
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9216473435653176338
 Transform:
   m_ObjectHideFlags: 0
@@ -538,7 +579,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7110378508464172173}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.154, y: 0.549, z: 0}
+  m_LocalPosition: {x: -0.011, y: 0.555, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

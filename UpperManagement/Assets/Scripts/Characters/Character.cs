@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public class Character : DamageableEntity
 {
 
     [System.Serializable]
@@ -29,23 +29,17 @@ public class Character : MonoBehaviour
     [SerializeField] float currentJumpTime;
 
     [SerializeField] Transform groundCheckStart;
-
+    [SerializeField] bool dead;
     public InputVariables ivars;
-    [SerializeField] int maxHealth;
-    int currentHealth;
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         rb = GetComponent<Rigidbody2D>();
     }
-
-    public int GetHealth(bool current)
-    {
-        if (current)
-            return maxHealth;
-        else
-            return currentHealth;
-    }
+   
+        
+    
     // Update is called once per frame
     void Update()
     {
@@ -54,18 +48,37 @@ public class Character : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MoveCharacter();
+        if (!dead)
+        {
+            MoveCharacter();
 
+            grounded = false;
+        }
 
-
-
-        grounded = false;
+        dead = currentHealth <= 0;
     }
 
     void MoveCharacter()
     {
         moveDamped = Mathf.SmoothDamp(moveDamped, ivars.moveInput, ref moveDampVel, moveDampTime);
         grounded = IsGrounded();
+        if (ivars.verticalInput >= UnityEngine.InputSystem.InputSystem.settings.defaultButtonPressPoint)
+        {
+            if (currentJumpTime < jumpTime)
+            {
+                Jump();
+
+            }
+        }
+        else
+        {
+            if (!grounded)
+            {
+                currentJumpTime = jumpTime;
+            }
+        }
+
+
         if (grounded)
         {
             currentJumpTime = 0;
@@ -78,24 +91,25 @@ public class Character : MonoBehaviour
             rb.velocity = new Vector2(airMoveForce * moveDamped, rb.velocity.y);
         }
 
-        if (ivars.verticalInput >= UnityEngine.InputSystem.InputSystem.settings.defaultButtonPressPoint)
+
+
+        if(ivars.moveInput >= UnityEngine.InputSystem.InputSystem.settings.defaultButtonPressPoint)
         {
-            if (currentJumpTime < jumpTime)
-            {
-                Jump();
-                
-            }
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-        else
+        else if (ivars.moveInput <= -UnityEngine.InputSystem.InputSystem.settings.defaultButtonPressPoint)
         {
-            if (!grounded)
-            {
-                currentJumpTime = jumpTime;
-            }
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
+
+
     }
 
-   bool IsGrounded()
+    /// <summary>
+    /// Performs a ground check. Returns true if the circle cast hits the ground, returns false if it hits anything not in the ground LayerMask.
+    /// </summary>
+    /// <returns></returns>
+   public bool IsGrounded()
    {
        bool hit = false;
        RaycastHit2D rh = Physics2D.CircleCast(groundCheckStart.position, groundCheckRadius, Vector2.down, groundCheckDistance, groundLayerMask);
@@ -114,6 +128,15 @@ public class Character : MonoBehaviour
     {
         Gizmos.DrawWireSphere(groundCheckStart.position, groundCheckRadius);
         Gizmos.DrawWireSphere(groundCheckStart.position + (Vector3.down * groundCheckDistance), groundCheckRadius);
+    }
+
+    /// <summary>
+    /// Applies damage when a positive number is supplied, or heals when a negative number is supplied.
+    /// </summary>
+    /// <param name="healthChange"></param>
+    public void ChangeHealth(int healthChange)
+    {
+        currentHealth -= healthChange;
     }
 
 }
