@@ -88,7 +88,7 @@ public class Character : DamageableEntity
         }
         else
         {
-            rb.velocity = new Vector2(airMoveForce * moveDamped, rb.velocity.y);
+            rb.AddForce(new Vector2(airMoveForce * moveDamped, 0));
         }
 
 

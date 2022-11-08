@@ -463,6 +463,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
   groundCheckDistance: 0.56
   groundCheckRadius: 0.34
   jumpVelocity: 9
@@ -575,16 +578,16 @@ MonoBehaviour:
   - attackName: LightAttack
     attackBounds: {x: 1.05, y: 0.69, z: 0.45}
     attackPosition: {x: 0.99, y: 0.51, z: 0}
-    attackDamage: 2
+    attackDamage: 8
     attackTime: 0.05
-    knockbackMult: 10
+    knockbackMult: 20
     debugColour: {r: 0.49019608, g: 1, b: 0.92941177, a: 1}
   - attackName: HeavyAttack
     attackBounds: {x: 1.66, y: 1.54, z: 0.45}
     attackPosition: {x: 1.29, y: 0.62, z: 0}
-    attackDamage: 5
+    attackDamage: 20
     attackTime: 0.2
-    knockbackMult: 10
+    knockbackMult: 20
     debugColour: {r: 0.07075471, g: 0.69529873, b: 1, a: 1}
   excludedRB: {fileID: 1257163776009461853}
 --- !u!114 &1965719049
