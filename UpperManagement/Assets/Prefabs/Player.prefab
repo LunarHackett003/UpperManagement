@@ -116,6 +116,37 @@ Transform:
   m_Father: {fileID: 1257163776009461848}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1993592879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1993592880}
+  m_Layer: 7
+  m_Name: SprayOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1993592880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993592879}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.021, y: 0.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1257163776009461848}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1257163775810272402
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +385,7 @@ GameObject:
   - component: {fileID: 2659110051695233375}
   - component: {fileID: 7197863026551525456}
   - component: {fileID: 1641219752}
+  - component: {fileID: 1965719049}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -376,6 +408,7 @@ Transform:
   - {fileID: 1257163775810272403}
   - {fileID: 1227677856}
   - {fileID: 9216473435653176338}
+  - {fileID: 1993592880}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -554,6 +587,21 @@ MonoBehaviour:
     knockbackMult: 10
     debugColour: {r: 0.07075471, g: 0.69529873, b: 1, a: 1}
   excludedRB: {fileID: 1257163776009461853}
+--- !u!114 &1965719049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257163776009461852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 182b13138c49e9747963cc438b85a2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1993592880}
+  fireForce: 40
+  projectile: {fileID: 5697110206837617489, guid: 35c3b4a8d20ed7b4a978fb95fdf7e6f3, type: 3}
 --- !u!1 &7110378508464172173
 GameObject:
   m_ObjectHideFlags: 0
