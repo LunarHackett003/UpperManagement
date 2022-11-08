@@ -75,8 +75,11 @@ public class AttackEvents : MonoBehaviour
                     //Do nothing and please stop fucking breaking hhhh
                 }
                 yield return null;
+
             }
+            currentAttackTime += Time.fixedDeltaTime;
             yield return null;
+
         }
 
         yield return null;
