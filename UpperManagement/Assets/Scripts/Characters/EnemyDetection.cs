@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class EnemyDetection : MonoBehaviour
 {
     [SerializeField] private GameObject target;
+    
+    [SerializeField] DamageableEntity entity; //the character or entity this is attached to
+
+
+    //reference to Character script on enemy
+
+    //start
+
     void Start()
     {
         
@@ -15,6 +22,16 @@ public class EnemyDetection : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void FixedUpdate()
+    {
+        //get x offset between player and enemy
+        if(entity is Character && target)
+        {
+            Character ch = entity as Character;
+            ch.ivars.moveInput = target.transform.position.x - transform.position.x;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,4 +47,5 @@ public class EnemyDetection : MonoBehaviour
             target = null; 
         }
     }
+
 }
