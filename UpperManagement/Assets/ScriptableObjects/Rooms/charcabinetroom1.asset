@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e7f33db270f93f4a8c4d665801a3797, type: 3}
-  m_Name: furnishedRoom1
+  m_Name: charcabinetroom1
   m_EditorClassIdentifier: 
   RoomAndRule:
-    room: {fileID: 0}
+    room: {fileID: 3681506208930800463, guid: c4a678d9015c2f64ba619ea55d8c3ad0, type: 3}
     minPosition: {x: 0, y: 0}
     maxPosition: {x: 0, y: 0}
     essential: 0

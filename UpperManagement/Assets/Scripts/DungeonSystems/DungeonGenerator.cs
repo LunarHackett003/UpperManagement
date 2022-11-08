@@ -37,6 +37,7 @@ namespace Eclipse.Dungeon
         public Vector2Int gridSize;
         public int startPosition = 0;
         public RoomScriptableObject[] roomList;
+        public GameObject finalRoom;
         public int maxDungeonIterations;
         public Vector2Int roomSize;
         public List<Cell> board;
@@ -96,14 +97,9 @@ namespace Eclipse.Dungeon
                             }
 
                         }
+                        Random.InitState(System.DateTime.Now.TimeOfDay.Milliseconds);
 
-                        if(randomRoom == -1)
-                        {
-                            if (availableRooms.Count > 0) { randomRoom = availableRooms[Random.Range(0, availableRooms.Count)]; }
-                            else { randomRoom = 0; }
-                        }
-
-
+                        randomRoom = Random.Range(0, roomList.Length - 1);
 
                         var newRoom = Instantiate(roomList[randomRoom].RoomAndRule.room, new Vector3(i * roomSize.x, -j * roomSize.y, 0), Quaternion.identity,transform).GetComponent<RoomBehaviour>();
 
@@ -117,6 +113,8 @@ namespace Eclipse.Dungeon
 
                 }
             }
+
+
         }
 
         /// <summary>
