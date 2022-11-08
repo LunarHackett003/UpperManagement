@@ -57,13 +57,13 @@ public class AttackEvents : MonoBehaviour
         while (currentAttackTime < thisAtk.attackTime)
         {
 
-            foreach (var item in Physics2D.OverlapBoxAll(thisAtk.attackPosition + (transform.rotation * transform.position), thisAtk.attackBounds, 0, attackLayerMask))
+            foreach (var item in Physics2D.OverlapBoxAll((transform.rotation * thisAtk.attackPosition) + transform.position, thisAtk.attackBounds, 0, attackLayerMask))
             {
                 if (item.attachedRigidbody && item.attachedRigidbody != excludedRB)
                 {
                     if (!rb2ds.Contains(item.attachedRigidbody))
                     {
-                        item.attachedRigidbody.AddForce(( (item.transform.position - transform.position).normalized + (Vector3.up)) * thisAtk.attackDamage * thisAtk.knockbackMult );
+                        item.attachedRigidbody.AddForce(((item.transform.position - transform.position).normalized + (Vector3.up)) * thisAtk.attackDamage * thisAtk.knockbackMult );
                         yield return null;
                     }
 
