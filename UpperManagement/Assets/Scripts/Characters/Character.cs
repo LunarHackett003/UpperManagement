@@ -84,11 +84,11 @@ public class Character : DamageableEntity
             currentJumpTime = 0;
 
             
-            rb.velocity = new Vector2(moveDamped * moveSpeed, rb.velocity.y);
+            transform.position += new Vector3(moveDamped * moveSpeed * Time.fixedDeltaTime, 0, 0);
         }
         else
         {
-            rb.velocity = new Vector2(airMoveForce * moveDamped, rb.velocity.y);
+            rb.AddForce(new Vector2(airMoveForce * moveDamped, 0));
         }
 
 

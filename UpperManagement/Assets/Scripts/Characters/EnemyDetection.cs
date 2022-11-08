@@ -7,7 +7,7 @@ public class EnemyDetection : MonoBehaviour
     [SerializeField] private GameObject target;
     
     [SerializeField] DamageableEntity entity; //the character or entity this is attached to
-
+    [SerializeField] float followStopDistance;
 
     //reference to Character script on enemy
 
@@ -27,10 +27,18 @@ public class EnemyDetection : MonoBehaviour
     private void FixedUpdate()
     {
         //get x offset between player and enemy
-        if(entity is Character && target)
+        if (entity is Character && target)
         {
-            Character ch = entity as Character;
-            ch.ivars.moveInput = target.transform.position.x - transform.position.x;
+            if (Vector3.Distance(transform.position, target.transform.position) >= followStopDistance)
+            {
+                Character ch = entity as Character;
+                ch.ivars.moveInput = target.transform.position.x - transform.position.x;
+            }
+            else
+            {
+                Character ch = entity as Character;
+                ch.ivars.moveInput = 0;
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
