@@ -46,7 +46,7 @@ public class Character : DamageableEntity
 
     }
 
-    private void FixedUpdate()
+    override protected void FixedUpdate()
     {
         if (!dead)
         {
