@@ -83,8 +83,10 @@ public class Character : DamageableEntity
         {
             currentJumpTime = 0;
 
-            
-            rb.velocity = new Vector2(moveDamped * moveSpeed, rb.velocity.y);
+            if (ivars.moveInput != 0)
+            {
+                rb.velocity = new Vector2(moveDamped * moveSpeed, rb.velocity.y);
+            }
         }
         else
         {
