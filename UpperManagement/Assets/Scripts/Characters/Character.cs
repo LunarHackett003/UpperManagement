@@ -29,7 +29,6 @@ public class Character : DamageableEntity
     [SerializeField] float currentJumpTime;
 
     [SerializeField] Transform groundCheckStart;
-    [SerializeField] bool dead;
     public InputVariables ivars;
     // Start is called before the first frame update
     protected override void Start()
@@ -132,13 +131,6 @@ public class Character : DamageableEntity
         Gizmos.DrawWireSphere(groundCheckStart.position + (Vector3.down * groundCheckDistance), groundCheckRadius);
     }
 
-    /// <summary>
-    /// Applies damage when a positive number is supplied, or heals when a negative number is supplied.
-    /// </summary>
-    /// <param name="healthChange"></param>
-    public void ChangeHealth(int healthChange)
-    {
-        currentHealth -= healthChange;
-    }
+
 
 }

@@ -74,6 +74,11 @@ public class AttackEvents : MonoBehaviour
                 {
                     //Do nothing and please stop fucking breaking hhhh
                 }
+
+                if (item.transform.GetComponent<DamageableEntity>())
+                {
+                    item.transform.GetComponent<DamageableEntity>().ChangeHealth(thisAtk.attackDamage);
+                }
                 yield return null;
 
             }
