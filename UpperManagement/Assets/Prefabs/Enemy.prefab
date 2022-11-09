@@ -256,6 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  dead: 0
   deathEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -273,7 +274,6 @@ MonoBehaviour:
   jumpTime: 0
   currentJumpTime: 0
   groundCheckStart: {fileID: 1037143163}
-  dead: 0
   ivars:
     moveInput: 0
     verticalInput: 0
