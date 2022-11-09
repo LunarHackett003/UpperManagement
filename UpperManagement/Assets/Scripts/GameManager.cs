@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
-    public UnityEngine.UI.Image fader;
+    public Image levelFader;
+    public CanvasGroup deathScreenGroup;
     [SerializeField] int fadeTime;
     private void Start()
     {
@@ -16,19 +18,19 @@ public class GameManager : MonoBehaviour
 
     public void SceneLoader(int sceneToLoad)
     {
-        StartCoroutine(ScreenFade(sceneToLoad));
+        StartCoroutine(LevelFade(sceneToLoad));
     }
 
 
-    IEnumerator ScreenFade(int sceneToLoad)
+    IEnumerator LevelFade(int sceneToLoad)
     {
-        fader.gameObject.SetActive(true);
+        levelFader.gameObject.SetActive(true);
         float currentFade = 0f;
         while (currentFade < fadeTime)
         {
             currentFade += Time.fixedDeltaTime;
             Color col = new Color(0, 0, 0, currentFade);
-            fader.color = col;
+            levelFader.color = col;
 
             yield return null;
         }
@@ -38,11 +40,38 @@ public class GameManager : MonoBehaviour
         {
             currentFade -= Time.fixedDeltaTime;
             Color col = new Color(0, 0, 0, currentFade);
-            GameManager.instance.fader.color = col;
+            GameManager.instance.levelFader.color = col;
 
             yield return null;
         }
-        fader.gameObject.SetActive(false);
+        levelFader.gameObject.SetActive(false);
+        yield return null;
+    }
+
+    public void TriggerDeath()
+    {
+        StartCoroutine(DeathScreenFade());
+    }
+    IEnumerator DeathScreenFade()
+    {
+        deathScreenGroup.gameObject.SetActive(true);
+        float currentFade = 0f;
+        while (currentFade < fadeTime)
+        {
+            currentFade += Time.fixedDeltaTime / 4;
+            deathScreenGroup.alpha = Mathf.InverseLerp(0, fadeTime, currentFade);
+            yield return null;
+        }
+        yield return new WaitForSeconds(fadeTime);
+        SceneLoader(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        yield return null;
+        while (currentFade > 0)
+        {
+            currentFade -= Time.fixedDeltaTime / 2;
+            deathScreenGroup.alpha = Mathf.InverseLerp(0, fadeTime, currentFade);
+            yield return null;
+        }
+        deathScreenGroup.gameObject.SetActive(false);
         yield return null;
     }
 
