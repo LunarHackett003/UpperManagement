@@ -8,7 +8,7 @@ public class DamageableEntity : MonoBehaviour
 
      [SerializeField] protected int maxHealth;
     [SerializeField] protected int currentHealth;
-
+    [SerializeField] protected bool dead;
     [SerializeField] UnityEvent deathEvent;
     // Start is called before the first frame update
     protected virtual void Start()
@@ -30,6 +30,15 @@ public class DamageableEntity : MonoBehaviour
 
     void OnDeath()
     {
-        
+        dead = true;
+    }
+
+    /// <summary>
+    /// Applies damage when a positive number is supplied, or heals when a negative number is supplied.
+    /// </summary>
+    /// <param name="healthChange"></param>
+    public void ChangeHealth(int healthChange)
+    {
+        currentHealth -= healthChange;
     }
 }

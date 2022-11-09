@@ -10,10 +10,27 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] float lookaheadDivider;
     private void Start()
     {
-        cameraFollow = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
+        InitialiseFollower();
     }
+
+    void InitialiseFollower()
+    {
+        GameObject obj = GameObject.FindGameObjectWithTag("Player");
+        if (obj)
+        {
+            cameraFollow = obj.GetComponent<Character>();
+        }
+    }
+
     private void FixedUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, cameraFollow.transform.position + offset + ((Vector3)cameraFollow.rb.velocity / lookaheadDivider), Time.fixedDeltaTime * lerpSpeed);
+        if (cameraFollow)
+        {
+            transform.position = Vector3.Lerp(transform.position, cameraFollow.transform.position + offset + ((Vector3)cameraFollow.rb.velocity / lookaheadDivider), Time.fixedDeltaTime * lerpSpeed);
+        }
+        else
+        {
+            InitialiseFollower();
+        }
     }
 }
