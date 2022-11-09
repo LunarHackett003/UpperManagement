@@ -8,36 +8,19 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] bool loadOnStart;
 
     [SerializeField] int sceneIndex;
-    [SerializeField] int fadeTime;
 
+    
 
     private void Start()
     {
         if (loadOnStart)
         {
-            LoadNextScene();
+            TriggerSceneLoad();
         }
     }
-
-
-    public void LoadNextScene()
+    public void TriggerSceneLoad()
     {
-        SceneManager.LoadScene(sceneIndex);
+        GameManager.instance.SceneLoader(sceneIndex);
     }
 
-
-    IEnumerator ScreenFade()
-    {
-        float currentFade = 0f;
-
-        while (currentFade < fadeTime)
-        {
-            currentFade += Time.fixedDeltaTime;
-
-
-            yield return null;
-        }
-        LoadNextScene();
-        yield return null;
-    }
 }
