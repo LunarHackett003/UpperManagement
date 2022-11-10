@@ -8,7 +8,8 @@ public class DamageableEntity : MonoBehaviour
 
      [SerializeField] protected int maxHealth;
     [SerializeField] protected int currentHealth;
-    [SerializeField] protected bool dead;
+    public bool dead;
+    
     [SerializeField] UnityEvent deathEvent;
     // Start is called before the first frame update
     protected virtual void Start()
@@ -25,12 +26,20 @@ public class DamageableEntity : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        
+        if(currentHealth <= 0 && !dead)
+        {
+            OnDeath();
+        }
     }
 
     void OnDeath()
     {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         dead = true;
+        Vector2 randomForce = new Vector2(Random.Range(-1, 1), 1) * Random.Range(9.81f, 25);
+        rb.AddForce(randomForce);
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.AddTorque(Random.Range(-20, 20));
     }
 
     /// <summary>
