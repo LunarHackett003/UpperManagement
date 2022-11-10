@@ -32,7 +32,12 @@ public class Projectile : MonoBehaviour
         {
             if (collision.otherRigidbody.GetComponent<Character>())
             {
+                collision.otherRigidbody.AddForceAtPosition(rb.velocity, rb.position, ForceMode2D.Impulse);
+            }
 
+            if (collision.otherRigidbody.GetComponent<DamageableEntity>())
+            {
+                collision.otherRigidbody.GetComponent<DamageableEntity>().ChangeHealth(damage);
             }
         }
 
