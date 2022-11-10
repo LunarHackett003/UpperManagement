@@ -67,13 +67,16 @@ public class AttackEvents : MonoBehaviour
                     {
                         item.attachedRigidbody.AddForce(((item.transform.position - transform.position).normalized + (Vector3.up)) * thisAtk.attackDamage * thisAtk.knockbackMult );
                         yield return null;
-                    }
-
-                     rb2ds.Add(item.attachedRigidbody);
-                    yield return null;
-                    if (item.transform.GetComponent<DamageableEntity>())
-                    {
-                        item.transform.GetComponent<DamageableEntity>().ChangeHealth(thisAtk.attackDamage);
+                        rb2ds.Add(item.attachedRigidbody);
+                        yield return null;
+                        if (item.transform.GetComponent<DamageableEntity>())
+                        {
+                            item.transform.GetComponent<DamageableEntity>().ChangeHealth(thisAtk.attackDamage);
+                        }
+                        else if (item.transform.GetComponent<DetachedDamager>())
+                        {
+                            item.transform.GetComponent<DetachedDamager>().SendDamage(thisAtk.attackDamage);
+                        }
                     }
                 }
                 else

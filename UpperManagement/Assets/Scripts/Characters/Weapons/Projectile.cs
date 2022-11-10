@@ -6,8 +6,7 @@ public class Projectile : MonoBehaviour
 {
     Rigidbody2D rb;
     [SerializeField] bool isAffectedByGravity;
-
-    [SerializeField] int damage;
+    [SerializeField] AttackEvents attackEvents;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,20 +27,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.otherRigidbody)
-        {
-            if (collision.otherRigidbody.GetComponent<Character>())
-            {
-                collision.otherRigidbody.AddForceAtPosition(rb.velocity, rb.position, ForceMode2D.Impulse);
-            }
-
-            if (collision.otherRigidbody.GetComponent<DamageableEntity>())
-            {
-                collision.otherRigidbody.GetComponent<DamageableEntity>().ChangeHealth(damage);
-            }
-        }
-
-
-        Destroy(gameObject);
+        attackEvents.InitiateAttack(0);
+        Destroy(gameObject, 0.02f);
     }
 }

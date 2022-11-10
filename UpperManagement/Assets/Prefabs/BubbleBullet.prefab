@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 208746933098517145}
   - component: {fileID: 7963768089545409888}
   - component: {fileID: -4337420815444266858}
+  - component: {fileID: 237263095}
   m_Layer: 0
   m_Name: BubbleBullet
   m_TagString: Untagged
@@ -168,4 +169,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAffectedByGravity: 1
-  damage: 5
+  attackEvents: {fileID: 237263095}
+--- !u!114 &237263095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5697110206837617489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d7a9497e1f00dd4183ffbea0a8f0a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  attackList:
+  - attackName: BulletHit
+    attackBounds: {x: 0.2, y: 0.34, z: 1}
+    attackPosition: {x: -0.02, y: 0, z: 0}
+    attackDamage: 5
+    attackTime: 0.001
+    knockbackMult: 5
+    debugColour: {r: 0, g: 0.8652291, b: 1, a: 1}
+    stuffToDoOnAttack:
+      m_PersistentCalls:
+        m_Calls: []
+  excludedRB: {fileID: 6489665685543632524}

@@ -8,12 +8,14 @@ public class CharacterHealthDisplay : MonoBehaviour
 
     [SerializeField] Slider healthBar;
     [SerializeField] protected DamageableEntity targ;
-
+    [SerializeField] bool playerBar;
 
     private void Start()
     {
-        targ = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
-
+        if (playerBar)
+        {
+            targ = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
+        }
 
         if (healthBar && targ)
         {
