@@ -14,7 +14,7 @@ public class CharacterAnimator : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (anim && character && !character.dead)
+        if (anim && character)
         {
             anim.SetBool("light", character.ivars.lightInput);
             anim.SetBool("walking", character.ivars.moveInput != 0);

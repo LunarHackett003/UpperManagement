@@ -16,6 +16,7 @@ public class Killifier : MonoBehaviour
         {
             DamageableEntity ent = objectToKill.GetComponent<DamageableEntity>();
             ent.ChangeHealth(ent.GetHealth(true));
+            ent.GetComponent<Rigidbody2D>().drag = 100;
         }
         else
         {

@@ -47,8 +47,6 @@ public class Character : DamageableEntity
 
     override protected void FixedUpdate()
     {
-        base.FixedUpdate();
-
         if (!dead)
         {
             MoveCharacter();

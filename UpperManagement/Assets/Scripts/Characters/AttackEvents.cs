@@ -16,8 +16,6 @@ public class AttackEvents : MonoBehaviour
         public float attackTime;
         public float knockbackMult;
         public Color debugColour;
-
-        public UnityEvent stuffToDoOnAttack;
     }
 
     [SerializeField] LayerMask attackLayerMask;
@@ -71,17 +69,16 @@ public class AttackEvents : MonoBehaviour
 
                      rb2ds.Add(item.attachedRigidbody);
                     yield return null;
-                    if (item.transform.GetComponent<DamageableEntity>())
-                    {
-                        item.transform.GetComponent<DamageableEntity>().ChangeHealth(thisAtk.attackDamage);
-                    }
                 }
                 else
                 {
                     //Do nothing and please stop fucking breaking hhhh
                 }
 
-
+                if (item.transform.GetComponent<DamageableEntity>())
+                {
+                    item.transform.GetComponent<DamageableEntity>().ChangeHealth(thisAtk.attackDamage);
+                }
                 yield return null;
 
             }
