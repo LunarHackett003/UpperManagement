@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1993592880}
-  fireForce: 40
+  fireForce: 60
   projectile: {fileID: 5697110206837617489, guid: 35c3b4a8d20ed7b4a978fb95fdf7e6f3, type: 3}
 --- !u!1 &7110378508464172173
 GameObject:
