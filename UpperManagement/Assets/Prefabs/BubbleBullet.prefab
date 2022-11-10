@@ -168,4 +168,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAffectedByGravity: 1
-  damage: 2
+  damage: 5
