@@ -12,13 +12,15 @@ public class DamageableEntity : MonoBehaviour
     
     [SerializeField] UnityEvent deathEvent;
     // Start is called before the first frame update
+
+    [SerializeField] protected List<GameObject> objectsDisabledOnDeath;
     protected virtual void Start()
     {
         currentHealth = maxHealth;
     }
     public int GetHealth(bool current)
     {
-        if (current)
+        if (!current)
             return maxHealth;
         else
             return currentHealth;
@@ -40,6 +42,11 @@ public class DamageableEntity : MonoBehaviour
         rb.AddForce(randomForce);
         rb.constraints = RigidbodyConstraints2D.None;
         rb.AddTorque(Random.Range(-20, 20));
+
+        foreach (var item in objectsDisabledOnDeath)
+        {
+            item.SetActive(false);
+        }
     }
 
     /// <summary>
