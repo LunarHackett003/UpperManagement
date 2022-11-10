@@ -7,7 +7,7 @@ public class CharacterHealthDisplay : MonoBehaviour
 {
 
     [SerializeField] Slider healthBar;
-    protected DamageableEntity targ;
+    [SerializeField] protected DamageableEntity targ;
 
 
     private void Start()
@@ -17,6 +17,7 @@ public class CharacterHealthDisplay : MonoBehaviour
 
         if (healthBar && targ)
         {
+
             healthBar.maxValue = targ.GetHealth(false);
             healthBar.value = targ.GetHealth(true);
         }
