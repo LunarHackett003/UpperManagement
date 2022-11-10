@@ -28,6 +28,6 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         attackEvents.InitiateAttack(0);
-        Destroy(gameObject);
+        Destroy(gameObject, 0.02f);
     }
 }

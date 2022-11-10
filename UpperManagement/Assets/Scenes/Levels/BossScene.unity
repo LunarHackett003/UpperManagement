@@ -177,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 36919651}
   targ: {fileID: 1078966145}
+  playerBar: 0
 --- !u!114 &36919651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,8 +224,8 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 200
-  m_WholeNumbers: 1
-  m_Value: 200
+  m_WholeNumbers: 0
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -411,7 +412,7 @@ GameObject:
   - component: {fileID: 449928144}
   - component: {fileID: 449928145}
   - component: {fileID: 449928146}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -678,7 +679,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 43
   m_TargetDisplay: 0
 --- !u!1 &793941325
 GameObject:
@@ -863,7 +864,7 @@ GameObject:
   - component: {fileID: 984137554}
   - component: {fileID: 984137555}
   - component: {fileID: 984137556}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1111,6 +1112,7 @@ GameObject:
   - component: {fileID: 1078966143}
   - component: {fileID: 1078966145}
   - component: {fileID: 1078966146}
+  - component: {fileID: 1078966147}
   m_Layer: 0
   m_Name: ReceptionistBody
   m_TagString: Untagged
@@ -1198,7 +1200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f295026c0dd4b174e9603dcc31e9454b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 600
   currentHealth: 0
   dead: 0
   isPlayer: 0
@@ -1223,6 +1225,27 @@ MonoBehaviour:
   lerpSpeed: 1
   positionDivider: 1
   startPosition: {x: 0, y: 0, z: 0}
+--- !u!50 &1078966147
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078966142}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1180428049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,7 +1297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.745283, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
