@@ -939,6 +939,7 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 0
   dead: 0
+  isPlayer: 1
   deathEvent:
     m_PersistentCalls:
       m_Calls: []
