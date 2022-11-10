@@ -39,6 +39,12 @@ public class EnemyDetection : MonoBehaviour
                 Character ch = entity as Character;
                 ch.ivars.moveInput = 0;
             }
+
+        }
+        else
+        {
+            Character ch = entity as Character;
+            ch.ivars.moveInput = 0;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
