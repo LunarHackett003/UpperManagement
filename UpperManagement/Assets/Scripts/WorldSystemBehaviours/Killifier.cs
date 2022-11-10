@@ -24,7 +24,7 @@ public class Killifier : MonoBehaviour
 
         if(objectToKill == GameObject.FindGameObjectWithTag("Player"))
         {
-            GameManager.instance.TriggerDeath();
+            
         }
     }
 }

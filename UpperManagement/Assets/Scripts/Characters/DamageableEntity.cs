@@ -9,7 +9,8 @@ public class DamageableEntity : MonoBehaviour
      [SerializeField] protected int maxHealth;
     [SerializeField] protected int currentHealth;
     public bool dead;
-    
+
+    [SerializeField] bool isPlayer;
     [SerializeField] UnityEvent deathEvent;
     // Start is called before the first frame update
 
@@ -46,6 +47,11 @@ public class DamageableEntity : MonoBehaviour
         foreach (var item in objectsDisabledOnDeath)
         {
             item.SetActive(false);
+        }
+
+        if (isPlayer)
+        {
+            GameManager.instance.TriggerDeath();
         }
     }
 
