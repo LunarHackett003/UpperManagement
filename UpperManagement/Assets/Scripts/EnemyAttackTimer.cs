@@ -14,9 +14,12 @@ public class EnemyAttackTimer : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!attackDoing)
+        if (attacking)
         {
-            StartCoroutine(DoAttack());
+            if (!attackDoing)
+            {
+                StartCoroutine(DoAttack());
+            }
         }
     }
     IEnumerator DoAttack()
