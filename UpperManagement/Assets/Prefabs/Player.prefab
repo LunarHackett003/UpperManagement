@@ -1059,6 +1059,9 @@ MonoBehaviour:
     attackTime: 0.05
     knockbackMult: 20
     debugColour: {r: 0.49019608, g: 1, b: 0.92941177, a: 1}
+    stuffToDoOnAttack:
+      m_PersistentCalls:
+        m_Calls: []
   - attackName: HeavyAttack
     attackBounds: {x: 1.66, y: 1.54, z: 0.45}
     attackPosition: {x: 1.29, y: 0.62, z: 0}
@@ -1066,6 +1069,9 @@ MonoBehaviour:
     attackTime: 0.2
     knockbackMult: 20
     debugColour: {r: 0.07075471, g: 0.69529873, b: 1, a: 1}
+    stuffToDoOnAttack:
+      m_PersistentCalls:
+        m_Calls: []
   excludedRB: {fileID: 1257163776009461853}
 --- !u!114 &1965719049
 MonoBehaviour:
@@ -1080,7 +1086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1993592880}
-  fireForce: 60
+  fireForce: 100
   projectile: {fileID: 5697110206837617489, guid: 35c3b4a8d20ed7b4a978fb95fdf7e6f3, type: 3}
 --- !u!1 &7110378508464172173
 GameObject:
