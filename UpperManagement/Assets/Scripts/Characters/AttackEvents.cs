@@ -75,6 +75,11 @@ public class AttackEvents : MonoBehaviour
                     {
                         item.transform.GetComponent<DamageableEntity>().ChangeHealth(thisAtk.attackDamage);
                     }
+                    else if(item.transform.GetComponent<DetachedDamager>())
+                    {
+                        item.transform.GetComponent<DetachedDamager>().SendDamage(thisAtk.attackDamage);
+                    }
+
                 }
                 else
                 {
