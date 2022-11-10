@@ -2933,7 +2933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6e6dff92fd9754fa08b15a5cec9224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Level 1
+  levelName: Level 2
 --- !u!61 &913273105
 BoxCollider2D:
   m_ObjectHideFlags: 0
