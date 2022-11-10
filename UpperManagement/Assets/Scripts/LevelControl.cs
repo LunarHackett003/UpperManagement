@@ -21,7 +21,8 @@ public class LevelControl : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            SceneManager.LoadScene(levelName);
+            //SceneManager.LoadScene(levelName);
+            GameManager.instance.SceneLoader(SceneManager.GetSceneByName(levelName).buildIndex);
         }
     }
 }
