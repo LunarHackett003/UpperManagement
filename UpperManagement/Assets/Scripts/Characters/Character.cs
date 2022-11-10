@@ -30,6 +30,7 @@ public class Character : DamageableEntity
 
     [SerializeField] Transform groundCheckStart;
     public InputVariables ivars;
+
     // Start is called before the first frame update
     protected override void Start()
     {
