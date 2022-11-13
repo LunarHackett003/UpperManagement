@@ -365,11 +365,11 @@ MonoBehaviour:
     m_LineSpacing: 0.8
   m_Text: "Hi there!\nThis is the end of the Gameplay prototype of\nUpper Management!\nIt's
     taken us about four weeks, lots of retrying things, and definitely lots of awful
-    jokes at our own expense (made by ourselves, of course) to get to this point.\n\n<i>Credits</i>\n
-    Core concept, small character art - Dylan Mather\nWorld art, large character
-    art - Grace Harris, DYlan, Ben Collins\nScripting - Dlyan, Lunar-Skie Hackett\nLevel
+    jokes at our own expense (made by ourselves, of course) to get to this point.\n\n<i>Credits</i>\nCore
+    concept, small character art - Dylan Mather\nWorld art, large character art -
+    Grace Harris, DYlan, Ben Collins\nScripting - Dlyan, Lunar-Skie Hackett\nLevel
     design - All of us!\n\nWe hope you enjoyed our work.\nWe look forward to a day
-    where we can release this game in full.\nThanks for playing!"
+    where we can release this game in full.\nLots of love, \nFizzury Development"
 --- !u!222 &626574169
 CanvasRenderer:
   m_ObjectHideFlags: 0
