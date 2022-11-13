@@ -117,7 +117,7 @@ public class Character : DamageableEntity
    {
        bool hit = false;
        RaycastHit2D rh = Physics2D.CircleCast(groundCheckStart.position, groundCheckRadius, Vector2.down, groundCheckDistance, groundLayerMask);
-       hit = rh.collider;
+        hit = rh.collider;
        Debug.Log($"ground {hit}");
        
        return hit;
