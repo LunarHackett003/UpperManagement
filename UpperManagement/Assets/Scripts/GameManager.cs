@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public Image levelFader;
     public CanvasGroup deathScreenGroup;
     [SerializeField] int fadeTime;
-    private void Start()
+    private void Awake()
     {
         DontDestroyOnLoad(gameObject);
         instance = this;
