@@ -1480,6 +1480,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2031147022}
+        m_TargetAssemblyTypeName: QueuedMessageWriter, Assembly-CSharp
+        m_MethodName: TriggerWriteDelay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   objectsDisabledOnDeath:
   - {fileID: 36919648}
 --- !u!114 &1078966146
@@ -1789,14 +1801,6 @@ PrefabInstance:
     - target: {fileID: 756702831, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1641219752, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
-      propertyPath: attackList.Array.data[0].knockbackMult
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1641219752, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
-      propertyPath: attackList.Array.data[1].knockbackMult
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1257163776009461848, guid: 42c12cccc8bd3c1459298a7811ec032c, type: 3}
       propertyPath: m_RootOrder
