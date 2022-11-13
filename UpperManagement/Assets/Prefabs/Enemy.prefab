@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 939eda14c66726745b413f552e055732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTime: 0.2
+  attackTime: 0.5
   attacking: 0
   atkEvents: {fileID: 1835540511}
 --- !u!1 &1037143162
@@ -5293,7 +5293,7 @@ MonoBehaviour:
     m_Bits: 128
   attackList:
   - attackName: gruntBonk
-    attackBounds: {x: 1, y: 1, z: 1}
+    attackBounds: {x: 0.45, y: 1, z: 1}
     attackPosition: {x: 0.61, y: 0.62, z: 0}
     attackDamage: 4
     attackTime: 0.02

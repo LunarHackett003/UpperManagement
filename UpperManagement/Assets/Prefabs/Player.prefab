@@ -342,6 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1032059115}
   targ: {fileID: 1257163776009461849}
+  playerBar: 0
 --- !u!1 &1117071385
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de377a65ed8c67f4baff94a815b36d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 25
   currentHealth: 0
   dead: 0
   isPlayer: 1

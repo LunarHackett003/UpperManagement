@@ -5,7 +5,7 @@ using UnityEngine;
 public class MessageWriter : MonoBehaviour
 {
     [SerializeField] bool writeOnStart;
-    [SerializeField, TextArea] string stringToWrite;
+    [TextArea] public string stringToWrite;
     [SerializeField] float characterWriteWait;
     [SerializeField] UnityEngine.UI.Text textToWriteTo;
 

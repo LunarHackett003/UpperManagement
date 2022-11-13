@@ -13,6 +13,7 @@ public class ReceptionistHand : MonoBehaviour
     [SerializeField] bool rightHand;
     [SerializeField] Rigidbody2D handRb;
     [SerializeField] float damage;
+    public UnityEngine.Events.UnityEvent dropAttackEvent;
     private void Start()
     {
         startXPos = transform.position.x;
@@ -72,6 +73,7 @@ public class ReceptionistHand : MonoBehaviour
         attacking = true;
         handRb.isKinematic = false;
         handRb.velocity = Vector2.up * 4;
+        dropAttackEvent.Invoke();
         StartCoroutine(ReturnToPosition());
     }
 

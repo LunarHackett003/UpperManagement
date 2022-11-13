@@ -14,9 +14,9 @@ public class DamageSprites : MonoBehaviour
     {
         foreach (var item in sprites)
         {
-            if(entity.GetHealth(true) <= Mathf.InverseLerp(0, entity.GetHealth(false), item.damage))
+            //Debug.Log($"{item.damage}, {Mathf.InverseLerp(0, entity.GetHealth(false), entity.GetHealth(true))}");
+            if (item.damage <= Mathf.InverseLerp(0, entity.GetHealth(false), entity.GetHealth(true)))
             {
-                Debug.Log($"{item.damage}, {Mathf.InverseLerp(0, entity.GetHealth(false), item.damage)}");
                 spriteRenderer.sprite = item.sprite;
                 break;
             }
