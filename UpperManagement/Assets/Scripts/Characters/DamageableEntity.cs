@@ -48,6 +48,7 @@ public class DamageableEntity : MonoBehaviour
         {
             item.SetActive(false);
         }
+        deathEvent.Invoke();
 
         if (isPlayer)
         {
