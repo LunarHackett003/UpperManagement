@@ -3218,7 +3218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   writeOnStart: 0
   stringToWrite: Now it's time you learned how to fight people. Go ahead and hit
-    J to take a quick swing at that employee!
+    J or Left Mouse to take a quick swing at that employee!
   characterWriteWait: 0.02
   textToWriteTo: {fileID: 531497866}
 --- !u!114 &531497866
@@ -6815,7 +6815,7 @@ Transform:
   m_Children:
   - {fileID: 1311332195}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1210577407
 GameObject:
@@ -8501,8 +8501,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   writeOnStart: 0
-  stringToWrite: 'You can hit them harder than that! Press K to swing the mop with
-    full force and send this goon flying! '
+  stringToWrite: 'You can hit them harder than that! Press K or Right Mouse to swing
+    the mop with full force and send this goon flying! '
   characterWriteWait: 0.02
   textToWriteTo: {fileID: 1477372870}
 --- !u!114 &1477372870
@@ -9740,7 +9740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   writeOnStart: 0
   stringToWrite: Every Janitor worth their wage knows how to use their trusty spray
-    bottle, press L to shoot this goon from afar!
+    bottle, press L or V to shoot this goon from afar!
   characterWriteWait: 0.02
   textToWriteTo: {fileID: 1647073572}
 --- !u!114 &1647073572
