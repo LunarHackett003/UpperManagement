@@ -672,7 +672,7 @@ MonoBehaviour:
     attackBounds: {x: 12.2, y: 6.27, z: 1}
     attackPosition: {x: -2, y: -0.36, z: 0}
     attackDamage: 10
-    attackTime: 2
+    attackTime: 1
     knockbackMult: 10
     debugColour: {r: 1, g: 0, b: 0, a: 1}
     stuffToDoOnAttack:
@@ -1274,7 +1274,7 @@ MonoBehaviour:
     attackBounds: {x: 12.2, y: 6.27, z: 1}
     attackPosition: {x: 2, y: -0.36, z: 0}
     attackDamage: 10
-    attackTime: 2
+    attackTime: 1
     knockbackMult: 10
     debugColour: {r: 1, g: 0, b: 0, a: 1}
     stuffToDoOnAttack:
