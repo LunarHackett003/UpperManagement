@@ -1059,7 +1059,7 @@ MonoBehaviour:
     attackPosition: {x: 0.99, y: 0.51, z: 0}
     attackDamage: 8
     attackTime: 0.05
-    knockbackMult: 20
+    knockbackMult: 15
     debugColour: {r: 0.49019608, g: 1, b: 0.92941177, a: 1}
     stuffToDoOnAttack:
       m_PersistentCalls:
@@ -1069,7 +1069,7 @@ MonoBehaviour:
     attackPosition: {x: 1.29, y: 0.62, z: 0}
     attackDamage: 20
     attackTime: 0.2
-    knockbackMult: 20
+    knockbackMult: 15
     debugColour: {r: 0.07075471, g: 0.69529873, b: 1, a: 1}
     stuffToDoOnAttack:
       m_PersistentCalls:
